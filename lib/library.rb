@@ -26,4 +26,14 @@ class Library
     end
     return authored_books
   end
+
+  def find_by_publication_date(year_string)
+    published_books = {}
+    @books.each do |book|
+      if year_string == book.publication_date
+        published_books[book.title] = book
+      end
+    end
+    return published_books
+  end
 end
