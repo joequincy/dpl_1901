@@ -23,4 +23,9 @@ class AuthorTest < Minitest::Test
     assert_equal "2010", @nk_jemisin.books[1].publication_date
     assert_equal 2, @nk_jemisin.books.length
   end
+
+  def test_author_returns_added_book_when_adding
+    book = @nk_jemisin.add_book("The Fifth Season", "November 3, 2015")
+    assert_equal book, @nk_jemisin.books.last
+  end
 end
