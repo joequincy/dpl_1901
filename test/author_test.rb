@@ -8,4 +8,8 @@ class AuthorTest < Minitest::Test
   def test_it_exists
     assert_instance_of Author, @nk_jemisin
   end
+
+  def test_author_attributes_initialize_correctly
+    assert_equal [], @nk_jemisin.books
+  end
 end
