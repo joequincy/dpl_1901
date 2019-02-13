@@ -27,4 +27,9 @@ class LibraryTest < Minitest::Test
     @dpl.add_to_collection(@kingdoms)
     assert_equal [@fifth_season, @mockingbird, @kingdoms], @dpl.books
   end
+
+  def test_library_can_determine_if_it_includes_book_by_title
+    assert_equal true, @dpl.include?("To Kill a Mockingbird")
+    assert_equal false, @dpl.include?("A Connecticut Yankee in King Arthur's Court")
+  end
 end
