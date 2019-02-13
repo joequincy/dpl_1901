@@ -17,5 +17,10 @@ class AuthorTest < Minitest::Test
     @nk_jemisin.add_book("The Fifth Season", "November 3, 2015")
     assert_instance_of Book, @nk_jemisin.books[0]
     assert_equal "The Fifth Season", @nk_jemisin.books[0].title
+    assert_equal "Jemisin", @nk_jemisin.books[0].author_last_name
+    @nk_jemisin.add_book("The Hundred Thousand Kingdoms", "2010")
+    assert_instance_of Book, @nk_jemisin.books[1]
+    assert_equal "2010", @nk_jemisin.books[1].publication_date
+    assert_equal 2, @nk_jemisin.books.length
   end
 end
