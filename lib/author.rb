@@ -14,5 +14,6 @@ class Author
       title: title,
       publication_date: publication_date
     })
+    @books.last
   end
 end
