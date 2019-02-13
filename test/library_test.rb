@@ -54,6 +54,6 @@ class LibraryTest < Minitest::Test
       "The Fifth Season" => @fifth_season,
       "The Hundred Thousand Kingdoms" => @kingdoms
     }
-    assert_equal expected, @dpl.find_by_author("N.K. Jemison")
+    assert_equal expected, @dpl.find_by_author("N.K. Jemisin")
   end
 end
