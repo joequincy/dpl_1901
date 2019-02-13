@@ -15,4 +15,8 @@ class LibraryTest < Minitest::Test
   def test_it_exists
     assert_instance_of Library, @dpl
   end
+
+  def test_library_attributes_initialize_correctly
+    assert_equal [], @dpl.books
+  end
 end
