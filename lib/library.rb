@@ -8,4 +8,8 @@ class Library
   def add_to_collection(book)
     @books << book
   end
+
+  def include?(title)
+    @books.any?{|book| book.title == title}
+  end
 end
