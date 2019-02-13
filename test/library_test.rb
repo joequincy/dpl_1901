@@ -44,4 +44,16 @@ class LibraryTest < Minitest::Test
     @dpl.add_to_collection(@kingdoms)
     assert_equal [@fifth_season, @kingdoms, @mockingbird], @dpl.card_catalog
   end
+
+  def test_library_can_find_books_by_author
+    @dpl.add_to_collection(@fifth_season)
+    assert_equal [@fifth_season], @dpl.books
+    @dpl.add_to_collection(@mockingbird)
+    @dpl.add_to_collection(@kingdoms)
+    expected = {
+      "The Fifth Season" => @fifth_season,
+      "The Hundred Thousand Kingdoms" => @kingdoms
+    }
+    assert_equal expected, @dpl.find_by_author("N.K. Jemison")
+  end
 end
